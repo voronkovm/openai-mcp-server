@@ -1,11 +1,14 @@
 Installation:
 
 1) Download and install:
+```sh
 cd /Users/user/Documents/Cline/MCP/
 git clone github.com/voronkovm/openai-mcp-server.git
 npm install && npm run clean-build
+```
 
 2) add to mcp_settings.json
+```json
 {
   "mcpServers": {
     "github.com/voronkovm/openai-mcp-server": {
@@ -23,3 +26,4 @@ npm install && npm run clean-build
     }
   }
 }
+```
