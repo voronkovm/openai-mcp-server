@@ -1,0 +1,31 @@
+{
+  "name": "openai-server",
+  "version": "0.1.0",
+  "description": "MCP server for OpenAI API integration providing chat, documentation lookup, and code analysis tools",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "openai-server": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "clean-build": "rimraf build && npm run build",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "test": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "axios": "^1.7.9",
+    "openai": "^4.93.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  }
+}
